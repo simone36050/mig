@@ -26,7 +26,8 @@ def prepare_test(testPath, sessionsPath):
         for s in t['test']['sessions']:
             if s == 'SA non presente':
                 test['tests'].remove(t)
-            names.add(s)
+            else: 
+                names.add(s)
 
     # retrieve session
     for s in names:
