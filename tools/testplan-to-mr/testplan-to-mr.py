@@ -14,7 +14,7 @@ import argparse #used for args
 """
 
 OUT_DIR_SINGLE = "tests/single/"
-DIR_TEMPLATES = "/testplan-to-mr/input/templates/"
+DIR_TEMPLATES = "input/templates/"
 
 # Specify the input folder and output folder paths for the config
 INPUT_TEST = 'tests'
