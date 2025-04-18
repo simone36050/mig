@@ -17,6 +17,8 @@ bash docker-prepare.sh
 # TODO: comment after release on registry
 cd ../../../../../tools/i-mig-t
 # rm mig-t-beta-jar-with-dependencies.jar
+rm mig-t-beta-jar-with-dependencies.jar
+wget https://github.com/stfbk/mig-t/releases/download/v1.4.3/mig-t-beta-jar-with-dependencies.jar
 sudo docker build -t i-mig-t .
 cd ../../testplans/spid-cie-oidc/implementations/spid-cie-oidc-django/spid-cie-oidc-django/
 # local build i-mig-t --------
