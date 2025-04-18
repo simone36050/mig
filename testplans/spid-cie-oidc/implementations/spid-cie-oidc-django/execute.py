@@ -9,8 +9,11 @@ def read_suite(path):
         return json.load(f)
     
 def read_file(path):
-    with open(path) as f:
-        return f.read()
+    try: 
+        with open(path) as f:
+            return f.read()
+    except:
+        print("Error in reading {}".format(path))
 
 def prepare_test(testPath, sessionsPath):
     test = read_suite(testPath)
