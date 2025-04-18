@@ -40,7 +40,7 @@ def prepare_test(testPath, sessionsPath):
 
 
 def send_request(url, test, onlyValidate):
-    req = requests.post("{}/execute".format(url) + ('?onlyValidate' if onlyValidate else ''), json=test)
+    req = requests.post("{}/execute".format(url) + ('?onlyValidate=true' if onlyValidate else ''), json=test)
     
     # check status code
     if req.status_code != 200:
