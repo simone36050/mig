@@ -44,8 +44,9 @@ def send_request(url, test, onlyValidate):
     
     # check status code
     if req.status_code != 200:
+        print(req.status_code)
         print("Request failed")
-        return False    
+        return False
 
     # check error
     res = req.json()
@@ -61,6 +62,7 @@ def poll_result(url):
 
         # check status code
         if req.status_code != 200:
+            print(req.status_code)
             print("Request failed")
             return False
         
