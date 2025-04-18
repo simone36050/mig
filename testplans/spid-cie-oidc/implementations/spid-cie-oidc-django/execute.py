@@ -14,6 +14,7 @@ def read_file(path):
             return f.read()
     except:
         print("Error in reading {}".format(path))
+        return None
 
 def prepare_test(testPath, sessionsPath):
     test = read_suite(testPath)
@@ -23,6 +24,8 @@ def prepare_test(testPath, sessionsPath):
     names = set()
     for t in test['tests']:
         for s in t['test']['sessions']:
+            if s == 'SA non presente':
+                t.remove(t)
             names.add(s)
 
     # retrieve session
