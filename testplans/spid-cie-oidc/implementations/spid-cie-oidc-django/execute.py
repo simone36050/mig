@@ -18,7 +18,7 @@ def read_file(path):
 
 def prepare_test(testPath, sessionsPath):
     test = read_suite(testPath)
-    test['tests'] = test['tests'][:5]
+    # test['tests'] = test['tests'][:5]
     sessions = {}
 
     # collect session names
