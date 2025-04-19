@@ -10,8 +10,8 @@ services:
     volumes:
       - ./examples-docker/federation_authority:/django-project
     depends_on:
-      burpsuite:
-        condition: service_healthy
+      - burpsuite
+      #   condition: service_healthy
     networks:
       - oidcfed
     command: |

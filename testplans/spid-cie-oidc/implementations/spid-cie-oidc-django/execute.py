@@ -104,7 +104,7 @@ def main():
         
         pprint(result)
 
-        for e in result['tests']:
+        for e in result:
             if e['result'] == 'failed':
                 exit(1)
 
