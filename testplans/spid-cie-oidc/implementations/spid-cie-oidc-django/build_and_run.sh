@@ -27,11 +27,11 @@ echo "HEADLESS_MODE $HEADLESS_MODE"
 if [ $HEADLESS_MODE ]; 
 then 
   # mandatory: use "detached" mode (-d option) for pipeline
-  sudo docker compose -f docker-compose-headless.yml up --remove-orphans
+  sudo docker compose -f docker-compose-headless.yml up --remove-orphans -d
   wait
 else
   xhost +local:
-  sudo docker compose up --remove-orphans
+  sudo docker compose up --remove-orphans -d
   wait
   xhost -local:
 fi
