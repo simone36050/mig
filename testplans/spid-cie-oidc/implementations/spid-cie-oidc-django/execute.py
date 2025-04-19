@@ -18,6 +18,7 @@ def read_file(path):
 
 def prepare_test(testPath, sessionsPath):
     test = read_suite(testPath)
+    test['tests'] = test['tests'][:5]
     sessions = {}
 
     # collect session names
@@ -84,12 +85,18 @@ def main():
 
     args = parser.parse_args()
 
+    print("Preparing test")
+
     data = prepare_test(args.path, args.sessions)
+
+    print("Sending reauest")
+
     if not send_request(args.url, data, args.only_validate):
         print("Error in sending test suite to MIG-T")
         return
     
     if not args.only_validate:
+        print("Polling result")
         result = poll_result(args.url)
         if result is False:
             print("Error in retrieving the result")
